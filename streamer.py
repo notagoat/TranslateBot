@@ -21,9 +21,7 @@ def translater(content,target,translate_client):
 class myListener(StreamListener):
 	def on_notification(self, notification):
 		print("Notification Recieved!")
-		if notification["type"] == "mention":
-			pass
-		else:
+		if not notification["type"] == "mention":
 			print("Not a mention, Moving on...")
 			return
 		translate_client = translate.Client() #instantiate that motherfucker
